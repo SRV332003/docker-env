@@ -20,7 +20,7 @@ Docker-Env is a command-line interface (CLI) tool designed to simplify the proce
 
 Run the following `go install` command to install and keep this cli-tool in `$GOPATH/bin'. 
 ```sh
-go install github.com/SRV332003/docker-env
+go install github.com/SRV332003/envdaemon
 ```
 ### Install and Build from source
 
@@ -34,8 +34,8 @@ go install github.com/SRV332003/docker-env
 Clone the repository and navigate to the project directory:
 
 ```sh
-git clone https://github.com/SRV332003/docker-env.git
-cd docker-env
+git clone https://github.com/SRV332003/envdaemon.git
+cd envdaemon
 ```
 Build the project using the provided Makefile:
 ```sh
@@ -46,7 +46,7 @@ This will compile the Docker-Env CLI tool and place the executable in your `$GOP
 ## Usage
 To inject environment variables into your Dockerfile, first place a `# {{ENV}` placeholder in your Dockerfile where you want the environment variables to be injected. Then, run the following command:
 ```sh
-docker-env <path-to-envfile> <path-to-Dockerfile>
+envdaemon <path-to-envfile> <path-to-Dockerfile>
 ```
 ## Example
 Given a .env file with the following content:
@@ -86,7 +86,7 @@ These have the following directory structure:
 Running the following command will inject the environment variables from the `.env` file into the Dockerfile:
 
 ```sh
-docker-env .env Dockerfile
+envdaemon .env Dockerfile
 ```
 
 The updated Dockerfile will look like this:
